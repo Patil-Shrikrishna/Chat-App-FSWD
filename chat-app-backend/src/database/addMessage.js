@@ -1,16 +1,16 @@
 import {database} from "../database";
-import {objectId} from "mongodb";
+import {ObjectId} from "mongodb";
 
-export const addMessage = async (message, userId, chatId) => {
-    const id = new objectId();
+export const addMessage = async (text, userId, chatId) => {
+    const id = new ObjectId();
     const message = {
         _id:id,
-        text:message,
+        text,
         postedById:userId
     }
 
     await database.getConnection().collection("chats").updateOne({
-        _id:objectId(chatId)
+        _id: new ObjectId(chatId)
     },
     {
         $push:{

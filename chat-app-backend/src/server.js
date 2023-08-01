@@ -4,9 +4,9 @@ import * as admin from 'firebase-admin';
 import firebaseCredentials from './firebase-credentials.json';
 import cors from "cors";
 import {protectRoute, routes} from './routes';
-import {database} from "./database";
 import socketIO from 'socket.io'
 import http from 'http'
+import { addMessage, database } from "./database";
 
 admin.initializeApp({credential: admin.credential.cert(firebaseCredentials)});
 

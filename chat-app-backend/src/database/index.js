@@ -17,3 +17,8 @@ export {
     getUserChats
 }
 from './getUserChats';
+
+export {
+    addMessage
+}
+from './addMessage';
